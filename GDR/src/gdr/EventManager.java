@@ -11,6 +11,14 @@ import java.util.ArrayList;
  * @author mirica.daniel
  */
 public class EventManager {
-    ArrayList<Evento> list = new ArrayList<>();
+    ArrayList<Evento> listEventi = new ArrayList<>();
     
+    public EventManager()
+    {
+        this.listEventi.add(new Evento(1, Eventi.AnnotazioneTrovata));
+        this.listEventi.add(new Evento(1, Eventi.GadgetTrovato));
+        this.listEventi.add(new Evento(-10, Eventi.ImpiantoBruciato));
+        this.listEventi.add(new Evento(-20, Eventi.RitrovamentoLetturaSpartito));
+        
+    }
 }

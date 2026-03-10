@@ -4,25 +4,26 @@
  */
 package gdr;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author mirica.daniel
  */
-public class Character {
-    int hardness;
-    int inefficenza;
-    int malFunzionamentoStrumento;
-    int nGadget;
-    int nAnnotazioni;
-    typeCharacter tipoPersonaggio;
-    String typeGadget;
+public class GameManager {
+    static int turno=10;
+    int turnoAttuale=turno;
+    ArrayList<Character> listPossibleCharac = new ArrayList();
     
     
-    void useGadget(){
+    void svolgiEvento(){
         
     }
-    void useAnnotazione(){
+    Evento generaEvento(){
+        Evento e;
         
+        
+        return e;
     }
     
 }
