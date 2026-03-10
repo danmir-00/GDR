@@ -915,7 +915,7 @@
 											"top": 619,
 											"width": 209.83154296875,
 											"height": 13,
-											"text": "Lettura spartito",
+											"text": "RitrovamentoLetturaSpartito",
 											"horizontalAlignment": 0
 										},
 										{
@@ -933,7 +933,7 @@
 											"top": 634,
 											"width": 209.83154296875,
 											"height": 13,
-											"text": "Gadget trovato",
+											"text": "GadgetTrovato",
 											"horizontalAlignment": 0
 										},
 										{
@@ -951,7 +951,7 @@
 											"top": 649,
 											"width": 209.83154296875,
 											"height": 13,
-											"text": "Impianto bruciato",
+											"text": "ImpiantoBruciato",
 											"horizontalAlignment": 0
 										},
 										{
@@ -969,7 +969,7 @@
 											"top": 664,
 											"width": 209.83154296875,
 											"height": 13,
-											"text": "Annotazione trovata",
+											"text": "AnnotazioneTrovata",
 											"horizontalAlignment": 0
 										}
 									],
@@ -4164,7 +4164,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGcs6u/gwnuAWI="
 							},
-							"name": "Lettura spartito"
+							"name": "RitrovamentoLetturaSpartito"
 						},
 						{
 							"_type": "UMLEnumerationLiteral",
@@ -4172,7 +4172,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGcs6u/gwnuAWI="
 							},
-							"name": "Gadget trovato"
+							"name": "GadgetTrovato"
 						},
 						{
 							"_type": "UMLEnumerationLiteral",
@@ -4180,7 +4180,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGcs6u/gwnuAWI="
 							},
-							"name": "Impianto bruciato"
+							"name": "ImpiantoBruciato"
 						},
 						{
 							"_type": "UMLEnumerationLiteral",
@@ -4188,7 +4188,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGcs6u/gwnuAWI="
 							},
-							"name": "Annotazione trovata"
+							"name": "AnnotazioneTrovata"
 						}
 					]
 				},
