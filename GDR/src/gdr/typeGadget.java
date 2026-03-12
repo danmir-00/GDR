@@ -9,5 +9,5 @@ package gdr;
  * @author mirica.daniel
  */
 public enum typeGadget {
-    
+    bacchetta, tèCaldo, plettro;
 }

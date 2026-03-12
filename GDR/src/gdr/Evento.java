@@ -9,8 +9,8 @@ package gdr;
  * @author mirica.daniel
  */
 public class Evento {
-    int valueToEdit;
-    typeEventi typeEvent;
+    private int valueToEdit;
+    private typeEventi typeEvent;
 
     public Evento(int valueToEdit, typeEventi typeEvent) {
         this.valueToEdit = valueToEdit;

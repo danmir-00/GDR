@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * @author mirica.daniel
  */
 public class EventManager {
-    static ArrayList<Evento> listEventi = new ArrayList<>();
+    private static ArrayList<Evento> listEventi = new ArrayList<>();
     
     public  EventManager()
     {
