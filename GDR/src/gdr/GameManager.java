@@ -5,6 +5,7 @@
 package gdr;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  *
@@ -13,15 +14,17 @@ import java.util.ArrayList;
 public class GameManager {
     static int turno=10;
     int turnoAttuale=turno;
-    ArrayList<Character> listPossibleCharac = new ArrayList();
+     private ArrayList<Character> listPossibleCharac = new ArrayList();
     
     
     void svolgiEvento(){
         
     }
     Evento generaEvento(){
-        Evento e;
         
+        Random rnd = new Random();
+        int x = rnd.nextInt(0,EventManager.getListEventi().size());
+       Evento e= EventManager.getListEventi().get(x);
         
         return e;
     }

@@ -8,6 +8,6 @@ package gdr;
  *
  * @author mirica.daniel
  */
-public enum Eventi {
+public enum typeEventi {
    RitrovamentoLetturaSpartito,GadgetTrovato,ImpiantoBruciato,AnnotazioneTrovata; 
 }
