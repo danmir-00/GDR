@@ -9,5 +9,5 @@ package gdr;
  * @author mirica.daniel
  */
 public enum typeEventi {
-   RitrovamentoLetturaSpartito,GadgetTrovato,ImpiantoBruciato,AnnotazioneTrovata; 
+   RitrovamentoLetturaSpartito,GadgetTrovato,ImpiantoBruciato,AnnotazioneTrovata, dataAnnullata;
 }

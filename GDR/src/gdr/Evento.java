@@ -9,12 +9,31 @@ package gdr;
  * @author mirica.daniel
  */
 public class Evento {
-    private int valueToEdit;
+    private int lifeValueToEdit;
+    private int secndValuetoEdit;
     private typeEventi typeEvent;
 
     public Evento(int valueToEdit, typeEventi typeEvent) {
-        this.valueToEdit = valueToEdit;
+        this.lifeValueToEdit = valueToEdit;
         this.typeEvent = typeEvent;
+    }
+
+    public typeEventi getTypeEvent() {
+        return typeEvent;
+    }
+
+    public Evento(int valueToEdit, typeEventi typeEvent, int secndValuetoEdit) {
+        this.lifeValueToEdit = valueToEdit;
+        this.secndValuetoEdit = secndValuetoEdit;
+        this.typeEvent = typeEvent;
+    }
+
+    public int getLifeValueToEdit() {
+        return lifeValueToEdit;
+    }
+
+    public int getSecndValuetoEdit() {
+        return secndValuetoEdit;
     }
     
 }

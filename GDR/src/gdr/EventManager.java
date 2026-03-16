@@ -17,8 +17,9 @@ public class EventManager {
     {
         listEventi.add(new Evento(1, typeEventi.AnnotazioneTrovata));
         listEventi.add(new Evento(1, typeEventi.GadgetTrovato));
-        listEventi.add(new Evento(-10, typeEventi.ImpiantoBruciato));
-        listEventi.add(new Evento(-20, typeEventi.RitrovamentoLetturaSpartito));
+        listEventi.add(new Evento(-10, typeEventi.ImpiantoBruciato, +7));
+        listEventi.add(new Evento(-20, typeEventi.RitrovamentoLetturaSpartito, 5));
+        listEventi.add(new Evento(-15,typeEventi.dataAnnullata));
         
     }
 

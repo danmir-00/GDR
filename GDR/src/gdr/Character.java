@@ -41,5 +41,45 @@ public class Character {
     void useAnnotazione(){
         
     }
+
+    public void setHardness(int hardness) {
+        this.hardness = hardness;
+    }
+
+    public void setInefficenza(int inefficenza) {
+        this.inefficenza = inefficenza;
+    }
+
+    public void setMalFunzionamentoStrumento(int malFunzionamentoStrumento) {
+        this.malFunzionamentoStrumento = malFunzionamentoStrumento;
+    }
+
+    public void setnGadget(int nGadget) {
+        this.nGadget = nGadget;
+    }
+
+    public void setnAnnotazioni(int nAnnotazioni) {
+        this.nAnnotazioni = nAnnotazioni;
+    }
+
+    public int getHardness() {
+        return hardness;
+    }
+
+    public int getInefficenza() {
+        return inefficenza;
+    }
+
+    public int getMalFunzionamentoStrumento() {
+        return malFunzionamentoStrumento;
+    }
+
+    public int getnGadget() {
+        return nGadget;
+    }
+
+    public int getnAnnotazioni() {
+        return nAnnotazioni;
+    }
     
 }

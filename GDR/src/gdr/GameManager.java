@@ -12,15 +12,31 @@ import java.util.Random;
  * @author mirica.daniel
  */
 public class GameManager {
-    static int turno=10;
-    int turnoAttuale=turno;
-     private ArrayList<Character> listPossibleCharac = new ArrayList();
+    private static int turno=10;
+    private int turnoAttuale=turno;
+     
     private static Character charScelto;
     
-    void svolgiEvento(){
-        //DA FARE
+    static void  svolgiEvento(Evento e){
+        if (e.getTypeEvent().equals(typeEventi.AnnotazioneTrovata)){
+            charScelto.setnAnnotazioni(charScelto.getnAnnotazioni()+e.getLifeValueToEdit()); 
+        }
+        else if(e.getTypeEvent().equals(typeEventi.GadgetTrovato)){
+         charScelto.setnGadget(charScelto.getnGadget() + e.getLifeValueToEdit());
+        }
+        else if(e.getTypeEvent().equals(typeEventi.ImpiantoBruciato)){
+            charScelto.setHardness(charScelto.getHardness()+e.getLifeValueToEdit());
+            charScelto.setMalFunzionamentoStrumento(charScelto.getMalFunzionamentoStrumento()+e.getSecndValuetoEdit());
+        }
+        else if(e.getTypeEvent().equals(typeEventi.RitrovamentoLetturaSpartito)){
+            charScelto.setHardness(charScelto.getHardness()+e.getLifeValueToEdit());
+            charScelto.setInefficenza(charScelto.getInefficenza()+ e.getSecndValuetoEdit());
+        }
+        else if(e.getTypeEvent().equals(typeEventi.dataAnnullata)){
+            charScelto.setHardness(charScelto.getHardness()+e.getLifeValueToEdit());
+        }
     }
-    Evento generaEvento(){
+    static Evento generaEvento(){
         
         Random rnd = new Random();
         int x = rnd.nextInt(0,EventManager.getListEventi().size());
@@ -28,7 +44,20 @@ public class GameManager {
         
         return e;
     }
-
+    static typeCharacter rilevaTipoPersonaggio (String selezione){
+        if(typeCharacter.Batterista.name().equals(selezione)){
+            return typeCharacter.Batterista;
+        }
+        else if (typeCharacter.Cantante.name().equals(selezione)){
+            return typeCharacter.Cantante;
+        }
+        else if(typeCharacter.Chitarrista.name().equals(selezione)){
+           return typeCharacter.Chitarrista; 
+        }
+        return null;
+    }
+    
+    
     static public Character getCharScelto() {
         return charScelto;
     }
