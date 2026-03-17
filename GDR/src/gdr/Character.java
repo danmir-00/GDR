@@ -17,7 +17,7 @@ public class Character {
     private typeCharacter tipoPersonaggio;
     private typeGadget tipoGadget;
 
-    public Character(typeCharacter tipoPersonaggio) {
+    public void initCharacterFromType(typeCharacter tipoPersonaggio) {
         this.tipoPersonaggio = tipoPersonaggio;
         
         if(this.tipoPersonaggio==typeCharacter.Chitarrista){
@@ -36,10 +36,18 @@ public class Character {
     
     
     void useGadget(){
+        if(this.nGadget>0&&this.malFunzionamentoStrumento>0){
+          this.nGadget-=1;
+          this.malFunzionamentoStrumento-=10;
+        }
+        
         
     }
     void useAnnotazione(){
-        
+       if(this.nAnnotazioni>0&&this.inefficenza>0){
+          this.nAnnotazioni-=1;
+          this.inefficenza-=10;
+        } 
     }
 
     public void setHardness(int hardness) {
@@ -80,6 +88,22 @@ public class Character {
 
     public int getnAnnotazioni() {
         return nAnnotazioni;
+    }
+    public String getTypeCharc(){
+        String x = this.tipoPersonaggio.name();
+        return x;
+    }
+    public String getTypeGadget(){
+        String x = this.tipoGadget.name();
+        return x;
+    }
+
+    public void setTipoGadget(typeGadget tipoGadget) {
+        this.tipoGadget = tipoGadget;
+    }
+
+    public void setTipoPersonaggio(typeCharacter tipoPersonaggio) {
+        this.tipoPersonaggio = tipoPersonaggio;
     }
     
 }

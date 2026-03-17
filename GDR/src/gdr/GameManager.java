@@ -13,8 +13,9 @@ import java.util.Random;
  */
 public class GameManager {
     private static int turno=10;
-    private int turnoAttuale=turno;
-     
+    
+    private static int inefficenzaMAX=35;
+    private static int malFunzionamentoStrumentoMAX=35;
     private static Character charScelto;
     
     static void  svolgiEvento(Evento e){
@@ -58,8 +59,28 @@ public class GameManager {
     }
     
     
+    
+    
+        
+    public void setCharScelto(typeCharacter x) {
+        charScelto.initCharacterFromType(x);
+    }
+    
+//    public static void setCharScelto(Character charScelto) {
+//        GameManager.charScelto = charScelto;
+//    }
+    
+    
     static public Character getCharScelto() {
         return charScelto;
+    }
+
+    public static int getInefficenzaMAX() {
+        return inefficenzaMAX;
+    }
+
+    public static int getMalFunzionamentoStrumento() {
+        return malFunzionamentoStrumentoMAX;
     }
     
 }
