@@ -20,21 +20,21 @@ public class GameManager {
     
     static void  svolgiEvento(Evento e){
         if (e.getTypeEvent().equals(typeEventi.AnnotazioneTrovata)){
-            charScelto.setnAnnotazioni(charScelto.getnAnnotazioni()+e.getLifeValueToEdit()); 
+            charScelto.setnAnnotazioni(charScelto.getnAnnotazioni()+e.getFirstValuteToEdit()); 
         }
         else if(e.getTypeEvent().equals(typeEventi.GadgetTrovato)){
-         charScelto.setnGadget(charScelto.getnGadget() + e.getLifeValueToEdit());
+         charScelto.setnGadget(charScelto.getnGadget() + e.getFirstValuteToEdit());
         }
         else if(e.getTypeEvent().equals(typeEventi.ImpiantoBruciato)){
-            charScelto.setHardness(charScelto.getHardness()+e.getLifeValueToEdit());
+            charScelto.setHardness(charScelto.getHardness()+e.getFirstValuteToEdit());
             charScelto.setMalFunzionamentoStrumento(charScelto.getMalFunzionamentoStrumento()+e.getSecndValuetoEdit());
         }
         else if(e.getTypeEvent().equals(typeEventi.RitrovamentoLetturaSpartito)){
-            charScelto.setHardness(charScelto.getHardness()+e.getLifeValueToEdit());
+            charScelto.setHardness(charScelto.getHardness()+e.getFirstValuteToEdit());
             charScelto.setInefficenza(charScelto.getInefficenza()+ e.getSecndValuetoEdit());
         }
         else if(e.getTypeEvent().equals(typeEventi.dataAnnullata)){
-            charScelto.setHardness(charScelto.getHardness()+e.getLifeValueToEdit());
+            charScelto.setHardness(charScelto.getHardness()+e.getFirstValuteToEdit());
         }
     }
     static Evento generaEvento(){

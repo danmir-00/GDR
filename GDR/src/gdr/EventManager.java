@@ -26,5 +26,23 @@ public class EventManager {
     public static ArrayList<Evento> getListEventi() {
         return listEventi;
     }
-    
+    String text4Event(Evento e){
+        String text="";
+        if(e.getTypeEvent().equals(typeEventi.AnnotazioneTrovata)){
+            text="Hai trovato un'annotazione da aggiungere all'inventario durante il concerto!";
+        }
+        else if(e.getTypeEvent().equals(typeEventi.GadgetTrovato)){
+            text="Hai trovato un gadget da aggiungere all'inventario durante il concerto!";  
+        }
+        else if(e.getTypeEvent().equals(typeEventi.ImpiantoBruciato)){
+            text="NOOOOOO l'impianto si è bruciato durante il concerto. L'hardness è scesa di "+Integer.toString(e.getFirstValuteToEdit())  + " e ti ha reso più inefficente di "+Integer.toString(e.getSecndValuetoEdit()) ;
+        }
+        else if(e.getTypeEvent().equals(typeEventi.RitrovamentoLetturaSpartito)){
+           text="Hai trovato un gadget da aggiungere nell'inventario!"; 
+        }
+        else if(e.getTypeEvent().equals(typeEventi.RitrovamentoLetturaSpartito)){
+            text="Hai trovato un gadget da aggiungere nell'inventario!";
+        }
+        return text;
+    }
 }

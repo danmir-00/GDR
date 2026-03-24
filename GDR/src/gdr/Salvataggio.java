@@ -17,16 +17,8 @@ public class Salvataggio {
     private Character charac = GameManager.getCharScelto();
     private ArrayList<String> listaEventixConsole = new ArrayList<>();
     private String filePathCSV;
-    void salvaCSV(){
-        String v =",";
-        try(BufferedWriter writer = new BufferedWriter(new FileWriter(this.filePathCSV))){
-           writer.write(Integer.toString(charac.getHardness())+v+Integer.toString(charac.getInefficenza())+v );
-           writer.write(Integer.toString(charac.getMalFunzionamentoStrumento())+v+Integer.toString(charac.getnAnnotazioni())+v);
-           writer.write(Integer.toString(charac.getnGadget())+v+ charac.getTypeCharc()+v+charac.getTypeGadget());
-        }
-        catch(IOException e){
-            
-        }
+    void addEventToList(String x){
+        this.listaEventixConsole.add(x);
     }
     //SPOSTARE METODI IN FILEMANAGER
 }

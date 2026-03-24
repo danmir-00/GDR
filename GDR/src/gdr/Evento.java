@@ -28,7 +28,7 @@ public class Evento {
         this.typeEvent = typeEvent;
     }
 
-    public int getLifeValueToEdit() {
+    public int getFirstValuteToEdit() {
         return lifeValueToEdit;
     }
 
