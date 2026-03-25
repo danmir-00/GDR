@@ -13,8 +13,8 @@ import java.util.ArrayList;
  *
  * @author mirica.daniel
  */
-public class FileManager {
-    void salvaCSV(String filePathCSV, Character charac, ArrayList list){
+public  class FileManager {
+    static void  salvaCSV(String filePathCSV, Character charac, ArrayList list){
         String v =",";
         try(BufferedWriter writer = new BufferedWriter(new FileWriter(filePathCSV))){
            writer.write(Integer.toString(charac.getHardness())+v+Integer.toString(charac.getInefficenza())+v );

@@ -35,13 +35,13 @@ public class EventManager {
             text="Hai trovato un gadget da aggiungere all'inventario durante il concerto!";  
         }
         else if(e.getTypeEvent().equals(typeEventi.ImpiantoBruciato)){
-            text="NOOOOOO l'impianto si è bruciato durante il concerto. L'hardness è scesa di "+Integer.toString(e.getFirstValuteToEdit())  + " e ti ha reso più inefficente di "+Integer.toString(e.getSecndValuetoEdit()) ;
+            text="NOOOOOO l'impianto si è bruciato durante il concerto. L'hardness è scesa di "+Integer.toString(e.getFirstValuteToEdit())  + " e ti ha peggiorato lo strumento di "+Integer.toString(e.getSecndValuetoEdit()) ;
         }
         else if(e.getTypeEvent().equals(typeEventi.RitrovamentoLetturaSpartito)){
-           text="Hai trovato un gadget da aggiungere nell'inventario!"; 
+           text="NOOOOOO hai ritrovato uno spartito, non lo sai leggere. L'hardness è scesa di "+Integer.toString(e.getFirstValuteToEdit())  + " e ti ha reso più inefficente di "+Integer.toString(e.getSecndValuetoEdit()) ; 
         }
-        else if(e.getTypeEvent().equals(typeEventi.RitrovamentoLetturaSpartito)){
-            text="Hai trovato un gadget da aggiungere nell'inventario!";
+        else if(e.getTypeEvent().equals(typeEventi.dataAnnullata)){
+            text="Ti hanno annullato la data.    L'hardness è scesa di "+Integer.toString(e.getFirstValuteToEdit());
         }
         return text;
     }

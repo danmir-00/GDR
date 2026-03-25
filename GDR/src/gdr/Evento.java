@@ -9,12 +9,12 @@ package gdr;
  * @author mirica.daniel
  */
 public class Evento {
-    private int lifeValueToEdit;
+    private int firstValueToEdit;
     private int secndValuetoEdit;
     private typeEventi typeEvent;
 
     public Evento(int valueToEdit, typeEventi typeEvent) {
-        this.lifeValueToEdit = valueToEdit;
+        this.firstValueToEdit = valueToEdit;
         this.typeEvent = typeEvent;
     }
 
@@ -23,13 +23,13 @@ public class Evento {
     }
 
     public Evento(int valueToEdit, typeEventi typeEvent, int secndValuetoEdit) {
-        this.lifeValueToEdit = valueToEdit;
+        this.firstValueToEdit = valueToEdit;
         this.secndValuetoEdit = secndValuetoEdit;
         this.typeEvent = typeEvent;
     }
 
     public int getFirstValuteToEdit() {
-        return lifeValueToEdit;
+        return firstValueToEdit;
     }
 
     public int getSecndValuetoEdit() {
