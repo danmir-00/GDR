@@ -13,17 +13,30 @@ import java.util.ArrayList;
  *
  * @author mirica.daniel
  */
-public  class FileManager {
-    static void  salvaCSV(String filePathCSV, Character charac, ArrayList list){
-        String v =",";
-        try(BufferedWriter writer = new BufferedWriter(new FileWriter(filePathCSV))){
-           writer.write(Integer.toString(charac.getHardness())+v+Integer.toString(charac.getInefficenza())+v );
-           writer.write(Integer.toString(charac.getMalFunzionamentoStrumento())+v+Integer.toString(charac.getnAnnotazioni())+v);
-           writer.write(Integer.toString(charac.getnGadget())+v+ charac.getTypeCharc()+v+charac.getTypeGadget());
-           
-        }
-        catch(IOException e){
+public class FileManager {
+
+    private static String filePathCSV = "";
+
+    static void salvaCSV(Character charac, ArrayList<String> list) {
+        String v = "-";
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePathCSV))) {
+            //SAVE PERSONAGGIO
+            //hardness,inefficenza,malFunzionamentoStrumento,nAnnotazioni,nGadget,typeCharc
+            writer.write(Integer.toString(charac.getHardness()) + v + Integer.toString(charac.getInefficenza()) + v);
+            writer.write(Integer.toString(charac.getMalFunzionamentoStrumento()) + v + Integer.toString(charac.getnAnnotazioni()) + v);
+            writer.write(Integer.toString(charac.getnGadget()) + v + charac.getTypeCharc());
+            writer.newLine();
             
+            
+            //SAVE lista eventi
+            for (String x : list) {
+                writer.write(String.join(v, x));
+                writer.newLine();
+            }
+
+        } catch (IOException e) {
+
         }
     }
 }

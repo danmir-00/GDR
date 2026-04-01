@@ -16,12 +16,12 @@ import java.util.ArrayList;
 public class Salvataggio {
 //    private Character charac = GameManager.getCharScelto();
     private ArrayList<String> listaEventixConsole = new ArrayList<>();
-    private String filePathCSV;
+    
     void addEventToList(String x){
         this.listaEventixConsole.add(x);
     }
     void save(){
-        FileManager.salvaCSV(this.filePathCSV,GameManager.getCharScelto(), this.listaEventixConsole );
+        FileManager.salvaCSV(GameManager.getCharScelto(), this.listaEventixConsole );
         
     }
     
