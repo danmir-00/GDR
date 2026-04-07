@@ -15,13 +15,13 @@ import java.util.ArrayList;
  */
 public class Salvataggio {
 //    private Character charac = GameManager.getCharScelto();
-    private ArrayList<String> listaEventixConsole = new ArrayList<>();
     
-    void addEventToList(String x){
-        this.listaEventixConsole.add(x);
+    
+    static void addEventToList(String x){
+        GameManager.getListaEventixConsole().add(x);
     }
     void save(){
-        FileManager.salvaCSV(GameManager.getCharScelto(), this.listaEventixConsole );
+        FileManager.salvaCSV(GameManager.getCharScelto(), GameManager.getListaEventixConsole() );
         
     }
     

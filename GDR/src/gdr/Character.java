@@ -4,11 +4,14 @@
  */
 package gdr;
 
+import java.io.Serializable;
+
 /**
  *
  * @author mirica.daniel
  */
-public class Character {
+public class Character implements Serializable {
+     private static final long serialVersionUID = 1L;
     private int hardness= 100;
     private int inefficenza = 0;
     private int malFunzionamentoStrumento =0;
@@ -105,5 +108,6 @@ public class Character {
     public void setTipoPersonaggio(typeCharacter tipoPersonaggio) {
         this.tipoPersonaggio = tipoPersonaggio;
     }
+    
     
 }

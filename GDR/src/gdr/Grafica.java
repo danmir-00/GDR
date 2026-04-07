@@ -4,12 +4,19 @@
  */
 package gdr;
 
+import java.awt.CardLayout;
+import javax.swing.JPanel;
+
 /**
  *
  * @author mirica.daniel
  */
 public class Grafica extends javax.swing.JFrame {
-    
+
+    private CardLayout cardLayout;
+    private JPanel mainPanel;
+    private GamePanel gamePanel;
+    private GameSchermataFinale schermataFinale;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Grafica.class.getName());
 
     /**
@@ -17,6 +24,37 @@ public class Grafica extends javax.swing.JFrame {
      */
     public Grafica() {
         initComponents();
+
+        cardLayout = new CardLayout();
+        mainPanel = new JPanel(cardLayout);
+
+        // prendo il contenuto attuale (la tua schermata)
+        JPanel selectPanel = (JPanel) getContentPane();
+
+        gamePanel = new GamePanel();
+        gamePanel.setLayout(null);
+
+        mainPanel.add(selectPanel, "select");
+        mainPanel.add(gamePanel, "game");
+        gamePanel = new GamePanel();
+        schermataFinale = new GameSchermataFinale();
+
+        mainPanel.add(gamePanel, "game");
+        mainPanel.add(schermataFinale, "finale");
+
+        // sostituisco il content pane
+        setContentPane(mainPanel);
+
+        revalidate();
+        repaint();
+    }
+
+    public void vaiAlGioco(String personaggio) {
+        GameManager.setCharScelto(GameManager.rilevaTipoPersonaggio(personaggio));
+
+        gamePanel.aggiornaDati();
+
+        cardLayout.show(mainPanel, "game");
     }
 
     /**
@@ -28,21 +66,69 @@ public class Grafica extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        lbl_Chitar = new javax.swing.JLabel();
+        lbl_batt = new javax.swing.JLabel();
+        lbl_cant = new javax.swing.JLabel();
+        btn_cantante = new javax.swing.JButton();
+        btn_Chitar = new javax.swing.JButton();
+        btn_bat = new javax.swing.JButton();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 575, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 326, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
+
+        lbl_Chitar.setText("Chitarrista");
+        getContentPane().add(lbl_Chitar);
+        lbl_Chitar.setBounds(118, 81, 60, 16);
+
+        lbl_batt.setText("Batterista");
+        getContentPane().add(lbl_batt);
+        lbl_batt.setBounds(236, 81, 60, 16);
+
+        lbl_cant.setText("Cantante");
+        getContentPane().add(lbl_cant);
+        lbl_cant.setBounds(370, 80, 60, 16);
+
+        btn_cantante.setText("Seleziona");
+        btn_cantante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cantanteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_cantante);
+        btn_cantante.setBounds(350, 110, 90, 23);
+
+        btn_Chitar.setText("Seleziona");
+        btn_Chitar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ChitarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_Chitar);
+        btn_Chitar.setBounds(100, 110, 90, 23);
+
+        btn_bat.setText("Seleziona");
+        btn_bat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_batActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_bat);
+        btn_bat.setBounds(220, 110, 90, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_cantanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cantanteActionPerformed
+        vaiAlGioco("Cantante");
+    }//GEN-LAST:event_btn_cantanteActionPerformed
+
+    private void btn_batActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_batActionPerformed
+        vaiAlGioco("Batterista");
+    }//GEN-LAST:event_btn_batActionPerformed
+
+    private void btn_ChitarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ChitarActionPerformed
+        vaiAlGioco("Chitarrista");
+    }//GEN-LAST:event_btn_ChitarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -70,5 +156,11 @@ public class Grafica extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_Chitar;
+    private javax.swing.JButton btn_bat;
+    private javax.swing.JButton btn_cantante;
+    private javax.swing.JLabel lbl_Chitar;
+    private javax.swing.JLabel lbl_batt;
+    private javax.swing.JLabel lbl_cant;
     // End of variables declaration//GEN-END:variables
 }

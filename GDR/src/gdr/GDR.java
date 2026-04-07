@@ -14,7 +14,9 @@ public class GDR {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Grafica form = new Grafica();
+        form.setSize(600,800);
+        form.setVisible(true);
     }
     
 }

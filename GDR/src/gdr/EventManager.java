@@ -11,9 +11,10 @@ import java.util.ArrayList;
  * @author mirica.daniel
  */
 public class EventManager {
+    private static final long serialVersionUID = 1L;
     private static ArrayList<Evento> listEventi = new ArrayList<>();
     
-    public  EventManager()
+    static  
     {
         listEventi.add(new Evento(1, typeEventi.AnnotazioneTrovata));
         listEventi.add(new Evento(1, typeEventi.GadgetTrovato));
@@ -26,7 +27,7 @@ public class EventManager {
     public static ArrayList<Evento> getListEventi() {
         return listEventi;
     }
-    String text4Event(Evento e){
+    public static String  text4Event(Evento e){
         String text="";
         if(e.getTypeEvent().equals(typeEventi.AnnotazioneTrovata)){
             text="Hai trovato un'annotazione da aggiungere all'inventario durante il concerto!";
@@ -43,6 +44,7 @@ public class EventManager {
         else if(e.getTypeEvent().equals(typeEventi.dataAnnullata)){
             text="Ti hanno annullato la data.    L'hardness è scesa di "+Integer.toString(e.getFirstValuteToEdit());
         }
+        
         return text;
     }
 }

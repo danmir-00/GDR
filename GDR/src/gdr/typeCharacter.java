@@ -9,5 +9,6 @@ package gdr;
  * @author mirica.daniel
  */
 public enum typeCharacter {
+    
     Batterista,Cantante,Chitarrista;
 }
